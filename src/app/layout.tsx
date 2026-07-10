@@ -28,11 +28,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://moduslead.app'),
-  title: 'ModusLead — Leadership Style Diagnostic',
+  title: 'ModusLead | Leadership Style Diagnostic',
   description:
-    '16 real management scenarios. Your honest responses. A personalized map of how you lead — and where you have gaps. Based on Hersey & Blanchard\'s Situational Leadership model.',
+    '16 real management scenarios. Your honest responses. A personalized map of how you lead and where you have gaps. Based on Hersey & Blanchard\'s Situational Leadership model.',
   openGraph: {
-    title: 'ModusLead — Leadership Style Diagnostic',
+    title: 'ModusLead | Leadership Style Diagnostic',
     description: 'Find out how you actually lead. 8 minutes. Based on Situational Leadership theory.',
     type: 'website',
     images: [
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ModusLead — Leadership Style Diagnostic',
+    title: 'ModusLead | Leadership Style Diagnostic',
     description: 'Find out how you actually lead. 8 minutes. Based on Situational Leadership theory.',
     images: ['/api/og'],
   },

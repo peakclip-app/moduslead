@@ -116,7 +116,7 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
               style={{ color: 'var(--ink-secondary)' }}
             >
               16 real management scenarios. Your honest responses. A personalized
-              map of your leadership style — strengths, blind spots, and where to
+              map of your leadership style: strengths, blind spots, and where to
               grow next.
             </p>
 
@@ -147,7 +147,7 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
             />
             <ExplainerCard
               label="Blind spot"
-              text="The leadership mode you almost never reach for — and when it costs you"
+              text="The leadership mode you almost never reach for, and when it costs you"
             />
             <ExplainerCard
               label="Accuracy"

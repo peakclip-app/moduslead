@@ -1,7 +1,7 @@
 import type { Scenario } from './types'
 
 export const scenarios: Scenario[] = [
-  // ─── R1 — Low skill, needs explicit direction ───────────────────────────────
+  // ─── R1: Low skill, needs explicit direction ────────────────────────────────
   // Textbook-correct response: S1 (Directing)
 
   {
@@ -33,7 +33,7 @@ export const scenarios: Scenario[] = [
     id: 'r1-unclear-done',
     readiness: 'R1',
     prompt:
-      "An intern's work came back with several basic errors — they misunderstood what 'finished' looked like for this task. The next phase is due in two days.",
+      "An intern's work came back with several basic errors. They misunderstood what 'finished' looked like for this task, and the next phase is due in two days.",
     options: [
       {
         style: 'S1',
@@ -62,7 +62,7 @@ export const scenarios: Scenario[] = [
     options: [
       {
         style: 'S1',
-        text: 'Walk them through it step by step — log in, find the board, create a task, assign it, set a deadline. Every step, explicitly.',
+        text: 'Walk them through it step by step: log in, find the board, create a task, assign it, and set a deadline. Every step, explicitly.',
       },
       {
         style: 'S2',
@@ -83,7 +83,7 @@ export const scenarios: Scenario[] = [
     id: 'r1-quality-gap',
     readiness: 'R1',
     prompt:
-      "An intern submits work that's clearly incomplete by your team's standards — not because they were careless, but because they genuinely didn't know what 'good' looks like on this team.",
+      "An intern submits work that is clearly incomplete by your team's standards, not because they were careless, but because they genuinely didn't know what 'good' looks like on this team.",
     options: [
       {
         style: 'S1',
@@ -104,7 +104,7 @@ export const scenarios: Scenario[] = [
     ],
   },
 
-  // ─── R2 — Developing skill, engaged but inconsistent ────────────────────────
+  // ─── R2: Developing skill, engaged but inconsistent ─────────────────────────
   // Textbook-correct response: S2 (Coaching)
 
   {
@@ -119,7 +119,7 @@ export const scenarios: Scenario[] = [
       },
       {
         style: 'S2',
-        text: 'Assign the task, explain your reasoning, and review the work together — reinforcing what works and correcting gently.',
+        text: 'Assign the task, explain your reasoning, and review the work together while reinforcing what works and correcting gently.',
       },
       {
         style: 'S3',
@@ -136,7 +136,7 @@ export const scenarios: Scenario[] = [
     id: 'r2-missed-deadline',
     readiness: 'R2',
     prompt:
-      "A normally reliable intern misses an internal deadline for the first time — they were overwhelmed by competing priorities and didn't know how to flag it earlier.",
+      "A normally reliable intern misses an internal deadline for the first time because they were overwhelmed by competing priorities and didn't know how to flag it earlier.",
     options: [
       {
         style: 'S1',
@@ -161,7 +161,7 @@ export const scenarios: Scenario[] = [
     id: 'r2-taking-initiative',
     readiness: 'R2',
     prompt:
-      "An intern who's been on the team a month starts making small decisions on their own — mostly reasonable, but occasionally missing context that would have changed the call. They didn't check in beforehand.",
+      "An intern who's been on the team a month starts making small decisions on their own. They are mostly reasonable, but occasionally miss context that would have changed the call. They didn't check in beforehand.",
     options: [
       {
         style: 'S1',
@@ -177,7 +177,7 @@ export const scenarios: Scenario[] = [
       },
       {
         style: 'S4',
-        text: "Say nothing — the decisions weren't wrong enough to address, and the habit will self-correct.",
+        text: "Say nothing since the decisions weren't wrong enough to address, and the habit will self-correct.",
       },
     ],
   },
@@ -186,15 +186,15 @@ export const scenarios: Scenario[] = [
     id: 'r2-asking-why',
     readiness: 'R2',
     prompt:
-      "An intern who's improving at the work itself keeps asking 'why' behind each process before doing it — not to stall, but genuinely trying to understand the logic. The questions are smart but slowing them down slightly.",
+      "An intern who's improving at the work itself keeps asking 'why' behind each process before doing it. They are not trying to stall, but genuinely trying to understand the logic. The questions are smart but slowing them down slightly.",
     options: [
       {
         style: 'S1',
-        text: "Redirect them toward just following the process for now — understanding the reasoning can come once they've built the habit.",
+        text: "Redirect them toward just following the process for now. Understanding the reasoning can come once they've built the habit.",
       },
       {
         style: 'S2',
-        text: 'Engage with the questions — explain the reasoning and use it to build their judgment, not just their compliance.',
+        text: 'Engage with the questions, explain the reasoning, and use it to build their judgment rather than just their compliance.',
       },
       {
         style: 'S3',
@@ -207,14 +207,14 @@ export const scenarios: Scenario[] = [
     ],
   },
 
-  // ─── R3 — Has the skill, lacks confidence ───────────────────────────────────
+  // ─── R3: Has the skill, lacks confidence ────────────────────────────────────
   // Textbook-correct response: S3 (Supporting)
 
   {
     id: 'r3-overchecking',
     readiness: 'R3',
     prompt:
-      "An intern has mastered a recurring task and consistently does it well, but keeps double-checking with you before doing anything slightly outside the usual script — even after you've told them they're ready to handle it alone.",
+      "An intern has mastered a recurring task and consistently does it well, but keeps double-checking with you before doing anything slightly outside the usual script, even after you've told them they're ready to handle it alone.",
     options: [
       {
         style: 'S1',
@@ -230,7 +230,7 @@ export const scenarios: Scenario[] = [
       },
       {
         style: 'S4',
-        text: "Stop checking in — they'll find their confidence on their own.",
+        text: "Stop checking in and let them find their confidence on their own.",
       },
     ],
   },
@@ -255,7 +255,7 @@ export const scenarios: Scenario[] = [
       },
       {
         style: 'S4',
-        text: "Stop checking in on their work — they'll realize no one else is worried about it.",
+        text: "Stop checking in on their work so they realize no one else is worried about it.",
       },
     ],
   },
@@ -264,7 +264,7 @@ export const scenarios: Scenario[] = [
     id: 'r3-refuses-challenge',
     readiness: 'R3',
     prompt:
-      "You offer a capable intern a stretch assignment — something more senior than their usual scope. They decline, saying they're not ready. You've watched them do work this complex already, just in smaller pieces.",
+      "You offer a capable intern a stretch assignment that is more senior than their usual scope. They decline, saying they're not ready. You've watched them do work this complex already, just in smaller pieces.",
     options: [
       {
         style: 'S1',
@@ -272,7 +272,7 @@ export const scenarios: Scenario[] = [
       },
       {
         style: 'S2',
-        text: "Discuss the assignment in detail — show them how their existing work maps to what it requires, and agree on checkpoints so they don't feel unsupported.",
+        text: "Discuss the assignment in detail by showing them how their existing work maps to what it requires, and agree on checkpoints so they don't feel unsupported.",
       },
       {
         style: 'S3',
@@ -297,7 +297,7 @@ export const scenarios: Scenario[] = [
       },
       {
         style: 'S2',
-        text: 'Do a practice run and provide both technical feedback and reassurance — make the prep feel collaborative rather than evaluative.',
+        text: 'Do a practice run and provide both technical feedback and reassurance to make the prep feel collaborative rather than evaluative.',
       },
       {
         style: 'S3',
@@ -305,12 +305,12 @@ export const scenarios: Scenario[] = [
       },
       {
         style: 'S4',
-        text: "Give them space — they've done hard things before and they'll self-settle before the day.",
+        text: "Give them space since they've done hard things before and they'll self-settle before the day.",
       },
     ],
   },
 
-  // ─── R4 — High skill, high confidence ───────────────────────────────────────
+  // ─── R4: High skill, high confidence ────────────────────────────────────────
   // Textbook-correct response: S4 (Delegating)
 
   {
@@ -342,7 +342,7 @@ export const scenarios: Scenario[] = [
     id: 'r4-asks-for-ownership',
     readiness: 'R4',
     prompt:
-      "A former intern who's now one of your most reliable people asks to own an entire deliverable end-to-end — including parts that used to route through you first. They've never been wrong on quality before.",
+      "A former intern who's now one of your most reliable people asks to own an entire deliverable end-to-end, including parts that used to route through you first. They've never been wrong on quality before.",
     options: [
       {
         style: 'S1',
@@ -367,7 +367,7 @@ export const scenarios: Scenario[] = [
     id: 'r4-disengaged',
     readiness: 'R4',
     prompt:
-      "Your strongest team member has started doing the minimum — still technically delivering, but clearly bored. They haven't said anything, but you notice fewer questions, less initiative, and shorter responses in async communication.",
+      "Your strongest team member has started doing the minimum. They are still technically delivering, but clearly bored. They haven't said anything, but you notice fewer questions, less initiative, and shorter responses in async communication.",
     options: [
       {
         style: 'S1',
@@ -379,7 +379,7 @@ export const scenarios: Scenario[] = [
       },
       {
         style: 'S3',
-        text: "Check in and let them know you value them — create space for them to share whatever's behind the change.",
+        text: "Check in and let them know you value them while creating space for them to share whatever's behind the change.",
       },
       {
         style: 'S4',
@@ -392,7 +392,7 @@ export const scenarios: Scenario[] = [
     id: 'r4-mentoring',
     readiness: 'R4',
     prompt:
-      "You want a high-performing team member to take on informal mentoring of someone newer — helping them get up to speed, answering questions, reviewing early work. The experienced person has never mentored before but has all the knowledge required.",
+      "You want a high-performing team member to take on informal mentoring of someone newer by helping them get up to speed, answering questions, and reviewing early work. The experienced person has never mentored before but has all the knowledge required.",
     options: [
       {
         style: 'S1',
@@ -408,7 +408,7 @@ export const scenarios: Scenario[] = [
       },
       {
         style: 'S4',
-        text: "Ask them to mentor the new person and step back — they'll figure out their own approach.",
+        text: "Ask them to mentor the new person and step back so they can figure out their own approach.",
       },
     ],
   },

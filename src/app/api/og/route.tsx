@@ -164,7 +164,6 @@ export async function GET(request: Request) {
                 TAKE THE 8-MIN ASSESSMENT →
               </div>
             )}
-            <div style={{ fontSize: 24, color: '#9AA4AE' }}>moduslead.app</div>
           </div>
         </div>
       ),
