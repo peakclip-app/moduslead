@@ -8,8 +8,8 @@ import IntroScreen from '@/components/IntroScreen'
 import QuizStep from '@/components/QuizStep'
 import ResultsReport from '@/components/ResultsReport'
 
-const LS_ANSWERS_KEY = 'leadlens_answers'
-const LS_RESULT_KEY = 'leadlens_result'
+const LS_ANSWERS_KEY = 'moduslead_answers'
+const LS_RESULT_KEY = 'moduslead_result'
 
 type AppView = 'intro' | 'quiz' | 'results'
 

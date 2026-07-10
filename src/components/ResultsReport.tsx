@@ -155,7 +155,7 @@ export default function ResultsReport({ result, onRetake }: ResultsReportProps) 
           className="font-bold tracking-tight text-sm"
           style={{ fontFamily: 'var(--font-mono, monospace)', color: '#161a1f' }}
         >
-          LeadLens
+          ModusLead
         </span>
         <span
           className="text-xs"

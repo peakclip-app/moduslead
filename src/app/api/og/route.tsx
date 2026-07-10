@@ -58,7 +58,7 @@ export async function GET(request: Request) {
                 letterSpacing: '0.08em',
               }}
             >
-              LEADLENS
+              MODUSLEAD
             </div>
             <div
               style={{
@@ -164,7 +164,7 @@ export async function GET(request: Request) {
                 TAKE THE 8-MIN ASSESSMENT →
               </div>
             )}
-            <div style={{ fontSize: 24, color: '#9AA4AE' }}>leadlens.app</div>
+            <div style={{ fontSize: 24, color: '#9AA4AE' }}>moduslead.app</div>
           </div>
         </div>
       ),

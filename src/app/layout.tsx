@@ -17,12 +17,12 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://leadlens.app'),
-  title: 'LeadLens — Leadership Style Diagnostic',
+  metadataBase: new URL('https://moduslead.app'),
+  title: 'ModusLead — Leadership Style Diagnostic',
   description:
     '16 real management scenarios. Your honest responses. A personalized map of how you lead — and where you have gaps. Based on Hersey & Blanchard\'s Situational Leadership model.',
   openGraph: {
-    title: 'LeadLens — Leadership Style Diagnostic',
+    title: 'ModusLead — Leadership Style Diagnostic',
     description: 'Find out how you actually lead. 8 minutes. Based on Situational Leadership theory.',
     type: 'website',
     images: [
@@ -30,13 +30,13 @@ export const metadata: Metadata = {
         url: '/api/og',
         width: 1200,
         height: 630,
-        alt: 'LeadLens Situational Leadership Diagnostic',
+        alt: 'ModusLead Situational Leadership Diagnostic',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LeadLens — Leadership Style Diagnostic',
+    title: 'ModusLead — Leadership Style Diagnostic',
     description: 'Find out how you actually lead. 8 minutes. Based on Situational Leadership theory.',
     images: ['/api/og'],
   },

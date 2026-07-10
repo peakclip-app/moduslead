@@ -51,7 +51,7 @@ export default function ShareCard({ result, onRetake }: ShareCardProps) {
   function handleShareTwitter() {
     const encoded = encodeResult(result)
     const url = `${window.location.origin}${window.location.pathname}?r=${encoded}`
-    const text = `I just completed the LeadLens Situational Leadership Diagnostic! My primary style is ${STYLE_PROFILES[result.primaryStyle].name} (${result.situationalAccuracy}% Situational Accuracy). Discover how you lead:`
+    const text = `I just completed the ModusLead Situational Leadership Diagnostic! My primary style is ${STYLE_PROFILES[result.primaryStyle].name} (${result.situationalAccuracy}% Situational Accuracy). Discover how you lead:`
     window.open(
       `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`,
       '_blank',
@@ -68,7 +68,7 @@ export default function ShareCard({ result, onRetake }: ShareCardProps) {
       const blobUrl = URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = blobUrl
-      a.download = `leadlens-${result.primaryStyle.toLowerCase()}-card.png`
+      a.download = `moduslead-${result.primaryStyle.toLowerCase()}-card.png`
       document.body.appendChild(a)
       a.click()
       document.body.removeChild(a)
@@ -95,7 +95,7 @@ export default function ShareCard({ result, onRetake }: ShareCardProps) {
           className="text-xs mb-4 tracking-widest"
           style={{ fontFamily: 'var(--font-mono, monospace)', color: '#9aa4ae' }}
         >
-          LEADLENS · LEADERSHIP DIAGNOSTIC
+          MODUSLEAD · LEADERSHIP DIAGNOSTIC
         </div>
 
         {/* Primary style hero */}
@@ -185,7 +185,7 @@ export default function ShareCard({ result, onRetake }: ShareCardProps) {
           className="mt-4 text-center text-xs"
           style={{ fontFamily: 'var(--font-mono, monospace)', color: 'rgba(154,164,174,0.5)' }}
         >
-          leadlens.app
+          moduslead.app
         </div>
       </div>
 

@@ -1,8 +1,13 @@
-# LeadLens — Setup
+# ModusLead — Setup
 
-## Prerequisites
-- Node.js 18+
-- A fresh Next.js 14 project (`npx create-next-app@latest leadlens --typescript --tailwind --app --src-dir`)
+A drop-in Next.js 14 + Tailwind CSS + TypeScript project.
+
+## Quickstart
+
+1. Create a fresh Next.js project:
+```bash
+npx create-next-app@latest moduslead --typescript --tailwind --app --src-dir
+```
 
 ## Drop-in instructions
 
