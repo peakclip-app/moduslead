@@ -58,8 +58,8 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
         y={Y0}
         width={PW}
         height={PH}
-        fill="#f1f3f2"
-        stroke="#9aa4ae"
+        fill="var(--bg-subtle)"
+        stroke="var(--border-strong)"
         strokeWidth="1"
       />
 
@@ -71,8 +71,8 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
             cx={X0 + fx * PW}
             cy={Y0 + fy * PH}
             r="1.5"
-            fill="#9aa4ae"
-            opacity="0.35"
+            fill="var(--ink-muted)"
+            opacity="0.45"
           />
         ))
       )}
@@ -83,7 +83,7 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
         y1={Y0}
         x2={CX}
         y2={Y1}
-        stroke="#9aa4ae"
+        stroke="var(--ink-muted)"
         strokeWidth="1"
         strokeDasharray="3 5"
       />
@@ -92,7 +92,7 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
         y1={CY}
         x2={X1}
         y2={CY}
-        stroke="#9aa4ae"
+        stroke="var(--ink-muted)"
         strokeWidth="1"
         strokeDasharray="3 5"
       />
@@ -102,7 +102,7 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
         const isPrimary = result.primaryStyle === style
         const color = STYLE_COLORS[style]
         return (
-          <g key={style} opacity={isPrimary ? 1 : 0.28}>
+          <g key={style} opacity={isPrimary ? 1 : 0.35}>
             <text
               x={x}
               y={y - 7}
@@ -131,16 +131,17 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
 
       {/* ── Axis: Directive (X) ───────────────────────── */}
       {/* border ticks */}
-      <line x1={CX} y1={Y1} x2={CX} y2={Y1 + 5} stroke="#9aa4ae" strokeWidth="1" />
-      <line x1={X0} y1={Y1} x2={X0} y2={Y1 + 5} stroke="#9aa4ae" strokeWidth="1" />
-      <line x1={X1} y1={Y1} x2={X1} y2={Y1 + 5} stroke="#9aa4ae" strokeWidth="1" />
+      <line x1={CX} y1={Y1} x2={CX} y2={Y1 + 5} stroke="var(--ink-muted)" strokeWidth="1" />
+      <line x1={X0} y1={Y1} x2={X0} y2={Y1 + 5} stroke="var(--ink-muted)" strokeWidth="1" />
+      <line x1={X1} y1={Y1} x2={X1} y2={Y1 + 5} stroke="var(--ink-muted)" strokeWidth="1" />
       {/* label */}
       <text
         x={CX}
-        y={Y1 + 32}
+        y={Y1 + 34}
         textAnchor="middle"
-        fill="#161a1f"
-        fontSize="10"
+        fill="var(--ink)"
+        fontSize="11"
+        fontWeight="700"
         fontFamily="var(--font-mono, monospace)"
         letterSpacing="0.06em"
       >
@@ -148,56 +149,61 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
       </text>
       <text
         x={X0 + 4}
-        y={Y1 + 19}
-        fill="#9aa4ae"
-        fontSize="8"
+        y={Y1 + 20}
+        fill="var(--ink-muted)"
+        fontSize="9"
+        fontWeight="600"
         fontFamily="var(--font-mono, monospace)"
       >
         low
       </text>
       <text
         x={X1 - 4}
-        y={Y1 + 19}
+        y={Y1 + 20}
         textAnchor="end"
-        fill="#9aa4ae"
-        fontSize="8"
+        fill="var(--ink-muted)"
+        fontSize="9"
+        fontWeight="600"
         fontFamily="var(--font-mono, monospace)"
       >
         high
       </text>
 
       {/* ── Axis: Supportive (Y) ─────────────────────── */}
-      <line x1={X0} y1={CY} x2={X0 - 5} y2={CY} stroke="#9aa4ae" strokeWidth="1" />
-      <line x1={X0} y1={Y0} x2={X0 - 5} y2={Y0} stroke="#9aa4ae" strokeWidth="1" />
-      <line x1={X0} y1={Y1} x2={X0 - 5} y2={Y1} stroke="#9aa4ae" strokeWidth="1" />
+      <line x1={X0} y1={CY} x2={X0 - 5} y2={CY} stroke="var(--ink-muted)" strokeWidth="1" />
+      <line x1={X0} y1={Y0} x2={X0 - 5} y2={Y0} stroke="var(--ink-muted)" strokeWidth="1" />
+      <line x1={X0} y1={Y1} x2={X0 - 5} y2={Y1} stroke="var(--ink-muted)" strokeWidth="1" />
       <text
-        x={X0 - 42}
+        x={X0 - 44}
         y={CY}
         textAnchor="middle"
-        fill="#161a1f"
-        fontSize="10"
+        fill="var(--ink)"
+        fontSize="11"
+        fontWeight="700"
         fontFamily="var(--font-mono, monospace)"
         letterSpacing="0.06em"
-        transform={`rotate(-90, ${X0 - 42}, ${CY})`}
+        transform={`rotate(-90, ${X0 - 44}, ${CY})`}
       >
         SUPPORTIVE →
       </text>
       <text
-        x={X0 - 10}
+        x={X0 - 12}
         y={Y1 - 2}
         textAnchor="middle"
-        fill="#9aa4ae"
-        fontSize="8"
+        fill="var(--ink-muted)"
+        fontSize="9"
+        fontWeight="600"
         fontFamily="var(--font-mono, monospace)"
       >
         low
       </text>
       <text
-        x={X0 - 10}
+        x={X0 - 12}
         y={Y0 + 10}
         textAnchor="middle"
-        fill="#9aa4ae"
-        fontSize="8"
+        fill="var(--ink-muted)"
+        fontSize="9"
+        fontWeight="600"
         fontFamily="var(--font-mono, monospace)"
       >
         high
@@ -206,21 +212,21 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
       {/* ── Score annotations on axes ────────────────── */}
       <text
         x={dotX}
-        y={Y1 + 19}
+        y={Y1 + 20}
         textAnchor="middle"
         fill={dotColor}
-        fontSize="8"
+        fontSize="9"
         fontFamily="var(--font-mono, monospace)"
         fontWeight="700"
       >
         {result.directiveScore}
       </text>
       <text
-        x={X0 - 10}
+        x={X0 - 12}
         y={dotY + 3}
         textAnchor="middle"
         fill={dotColor}
-        fontSize="8"
+        fontSize="9"
         fontFamily="var(--font-mono, monospace)"
         fontWeight="700"
       >
@@ -236,9 +242,9 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
             x2={dotX}
             y2={dotY}
             stroke={dotColor}
-            strokeWidth="0.5"
+            strokeWidth="0.75"
             strokeDasharray="2 4"
-            opacity="0.35"
+            opacity="0.6"
           />
           <line
             x1={X0}
@@ -246,9 +252,9 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
             x2={dotX}
             y2={dotY}
             stroke={dotColor}
-            strokeWidth="0.5"
+            strokeWidth="0.75"
             strokeDasharray="2 4"
-            opacity="0.35"
+            opacity="0.6"
           />
         </>
       )}
@@ -257,7 +263,7 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
       {animated && (
         <g className="dot-settle" style={{ transformOrigin: `${dotX}px ${dotY}px` }}>
           {/* outer glow */}
-          <circle cx={dotX} cy={dotY} r="18" fill={dotColor} opacity="0.1" />
+          <circle cx={dotX} cy={dotY} r="18" fill={dotColor} opacity="0.15" />
           {/* ring */}
           <circle
             cx={dotX}
@@ -266,12 +272,12 @@ export default function QuadrantPlot({ result }: QuadrantPlotProps) {
             fill="none"
             stroke={dotColor}
             strokeWidth="1.5"
-            opacity="0.4"
+            opacity="0.6"
           />
           {/* main dot */}
           <circle cx={dotX} cy={dotY} r="8" fill={dotColor} />
           {/* center */}
-          <circle cx={dotX} cy={dotY} r="2.5" fill="#f1f3f2" />
+          <circle cx={dotX} cy={dotY} r="2.5" fill="var(--bg)" />
         </g>
       )}
     </svg>

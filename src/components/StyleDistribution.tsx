@@ -46,26 +46,26 @@ export default function StyleDistribution({ result }: StyleDistributionProps) {
 
             {/* Bar track */}
             <div
-              className="flex-1 h-5 relative overflow-hidden"
-              style={{ backgroundColor: 'rgba(154, 164, 174, 0.15)' }}
+              className="flex-1 h-5 relative overflow-hidden transition-colors"
+              style={{ backgroundColor: 'var(--bg-subtle)', border: '1px solid var(--border)' }}
             >
               <div
                 className="h-full bar-fill"
                 style={{
                   width: mounted ? `${pct}%` : '0%',
                   backgroundColor: color,
-                  opacity: isPrimary ? 1 : 0.45,
+                  opacity: isPrimary ? 1 : 0.5,
                   transition: mounted ? 'width 0.7s ease-out' : 'none',
                 }}
               />
               {/* Inline percentage label */}
               {pct > 8 && (
                 <span
-                  className="absolute inset-y-0 left-2 flex items-center text-xs font-medium"
+                  className="absolute inset-y-0 left-2 flex items-center text-xs font-semibold"
                   style={{
                     fontFamily: 'var(--font-mono, monospace)',
-                    color: isPrimary ? '#f1f3f2' : '#161a1f',
-                    opacity: isPrimary ? 1 : 0.6,
+                    color: isPrimary ? '#ffffff' : 'var(--ink)',
+                    opacity: isPrimary ? 1 : 0.8,
                     fontSize: '10px',
                   }}
                 >
@@ -78,7 +78,7 @@ export default function StyleDistribution({ result }: StyleDistributionProps) {
             <span
               className="text-xs shrink-0 w-20 text-right"
               style={{
-                color: isPrimary ? color : '#9aa4ae',
+                color: isPrimary ? color : 'var(--ink-muted)',
                 fontWeight: isPrimary ? 600 : 400,
               }}
             >
