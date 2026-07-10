@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f1f3f2;
+  --ink: #161a1f;
+  --grid: #9aa4ae;
+  --s1: #4a6fa5;
+  --s2: #3d8b83;
+  --s3: #c98a3b;
+  --s4: #8b5a7c;
+  --cta: #3d8b83;
+  --cta-hover: #346e68;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--ink);
+}
+
+/* ── Dot settle animation (QuadrantPlot) ─────────────────────────── */
+@keyframes dot-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+  65% {
+    transform: scale(1.25);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.dot-settle {
+  transform-origin: center;
+  animation: dot-in 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* ── Bar fill animation (StyleDistribution) ─────────────────────── */
+@keyframes bar-in {
+  from {
+    width: 0%;
+  }
+}
+
+.bar-fill {
+  animation: bar-in 0.7s ease-out forwards;
+}
+
+/* ── Ruler marker animation (QuizStep) ──────────────────────────── */
+@keyframes marker-slide {
+  from {
+    opacity: 0;
+    transform: translateX(-4px) translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(-50%);
+  }
+}
+
+.marker-slide {
+  animation: marker-slide 0.2s ease-out forwards;
+}
+
+/* ── Option card selected pulse ─────────────────────────────────── */
+@keyframes option-select {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.985);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.option-select {
+  animation: option-select 0.15s ease-out forwards;
+}
+
+/* ── Results section fade-up ─────────────────────────────────────── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.4s ease-out forwards;
+}
+
+/* ── Reduced motion overrides ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .dot-settle,
+  .bar-fill,
+  .marker-slide,
+  .option-select,
+  .fade-up {
+    animation: none;
+  }
+}
