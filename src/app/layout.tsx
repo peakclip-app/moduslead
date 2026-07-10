@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { DM_Sans, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
@@ -15,6 +15,16 @@ const jetbrainsMono = JetBrains_Mono({
   variable: '--font-mono',
   display: 'swap',
 })
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f1f3f2' },
+    { media: '(prefers-color-scheme: dark)', color: '#111418' },
+  ],
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://moduslead.app'),
@@ -49,7 +59,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${jetbrainsMono.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased min-h-[100dvh] flex flex-col bg-bg text-ink">
+        {children}
+      </body>
     </html>
   )
 }

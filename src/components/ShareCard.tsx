@@ -209,17 +209,17 @@ export default function ShareCard({ result, onRetake }: ShareCardProps) {
             onClick={handleShareTwitter}
             className="py-2.5 px-3 text-xs font-semibold uppercase tracking-wider transition-all border flex items-center justify-center gap-1.5 focus:outline-none"
             style={{
-              backgroundColor: 'rgba(22,26,31,0.06)',
-              borderColor: '#161a1f',
-              color: '#161a1f',
+              backgroundColor: 'var(--bg-subtle)',
+              borderColor: 'var(--border-strong)',
+              color: 'var(--ink)',
             }}
             onMouseOver={(e) => {
-              ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = '#161a1f'
-              ;(e.currentTarget as HTMLButtonElement).style.color = '#ffffff'
+              ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--ink)'
+              ;(e.currentTarget as HTMLButtonElement).style.color = 'var(--bg)'
             }}
             onMouseOut={(e) => {
-              ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = 'rgba(22,26,31,0.06)'
-              ;(e.currentTarget as HTMLButtonElement).style.color = '#161a1f'
+              ;(e.currentTarget as HTMLButtonElement).style.backgroundColor = 'var(--bg-subtle)'
+              ;(e.currentTarget as HTMLButtonElement).style.color = 'var(--ink)'
             }}
           >
             <span>𝕏</span> Share on X
@@ -229,9 +229,9 @@ export default function ShareCard({ result, onRetake }: ShareCardProps) {
             onClick={handleCopyLink}
             className="py-2.5 px-3 text-xs font-semibold uppercase tracking-wider transition-all border focus:outline-none"
             style={{
-              backgroundColor: copied ? '#3d8b8318' : 'transparent',
-              borderColor: copied ? '#3d8b83' : 'rgba(154,164,174,0.5)',
-              color: copied ? '#3d8b83' : '#161a1f',
+              backgroundColor: copied ? 'var(--s2)' : 'var(--bg-subtle)',
+              borderColor: copied ? 'var(--s2)' : 'var(--border-strong)',
+              color: copied ? '#ffffff' : 'var(--ink)',
             }}
           >
             {copied ? '✓ Link copied' : 'Copy Share Link'}
@@ -242,7 +242,7 @@ export default function ShareCard({ result, onRetake }: ShareCardProps) {
         <div className="flex flex-col sm:flex-row gap-2.5">
           <button
             onClick={handleDownloadOg}
-            className="flex-1 py-3 px-4 text-xs font-semibold uppercase tracking-wider transition-all border focus:outline-none"
+            className="flex-1 py-3 px-4 text-xs font-semibold uppercase tracking-wider transition-all border focus:outline-none shadow-sm"
             style={{
               backgroundColor: primaryColor,
               borderColor: primaryColor,
@@ -263,14 +263,16 @@ export default function ShareCard({ result, onRetake }: ShareCardProps) {
             className="flex-1 py-3 px-4 text-xs font-semibold uppercase tracking-wider transition-all border focus:outline-none"
             style={{
               backgroundColor: 'transparent',
-              borderColor: 'rgba(154,164,174,0.4)',
-              color: 'rgba(22,26,31,0.8)',
+              borderColor: 'var(--border)',
+              color: 'var(--ink-secondary)',
             }}
             onMouseOver={(e) => {
-              ;(e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(22,26,31,0.7)'
+              ;(e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--border-strong)'
+              ;(e.currentTarget as HTMLButtonElement).style.color = 'var(--ink)'
             }}
             onMouseOut={(e) => {
-              ;(e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(154,164,174,0.4)'
+              ;(e.currentTarget as HTMLButtonElement).style.borderColor = 'var(--border)'
+              ;(e.currentTarget as HTMLButtonElement).style.color = 'var(--ink-secondary)'
             }}
           >
             Retake assessment

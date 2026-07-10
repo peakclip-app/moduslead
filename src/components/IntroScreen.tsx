@@ -1,8 +1,10 @@
 'use client'
 
+import ThemeToggle from './ThemeToggle'
+
 // ── Mini decorative quadrant for the hero ───────────────────────────────────
 function MiniQuadrant() {
-  const colors = { S3: '#c98a3b', S2: '#3d8b83', S4: '#8b5a7c', S1: '#4a6fa5' }
+  const colors = { S3: 'var(--s3)', S2: 'var(--s2)', S4: 'var(--s4)', S1: 'var(--s1)' }
   const labels = { S3: 'S3', S2: 'S2', S4: 'S4', S1: 'S1' }
 
   return (
@@ -13,11 +15,11 @@ function MiniQuadrant() {
       aria-hidden="true"
     >
       {/* Border */}
-      <rect x="4" y="4" width="112" height="112" fill="none" stroke="#9aa4ae" strokeWidth="1" />
+      <rect x="4" y="4" width="112" height="112" fill="none" stroke="var(--ink-muted)" strokeWidth="1" />
 
       {/* Dividers */}
-      <line x1="60" y1="4" x2="60" y2="116" stroke="#9aa4ae" strokeWidth="0.75" strokeDasharray="2 3" />
-      <line x1="4" y1="60" x2="116" y2="60" stroke="#9aa4ae" strokeWidth="0.75" strokeDasharray="2 3" />
+      <line x1="60" y1="4" x2="60" y2="116" stroke="var(--ink-muted)" strokeWidth="0.75" strokeDasharray="2 3" />
+      <line x1="4" y1="60" x2="116" y2="60" stroke="var(--ink-muted)" strokeWidth="0.75" strokeDasharray="2 3" />
 
       {/* Quadrant labels */}
       {([
@@ -35,7 +37,7 @@ function MiniQuadrant() {
           fontWeight="700"
           fill={colors[style]}
           fontFamily="var(--font-mono, monospace)"
-          opacity="0.75"
+          opacity="0.85"
         >
           {labels[style]}
         </text>
@@ -47,14 +49,14 @@ function MiniQuadrant() {
 // ── Explainer card ──────────────────────────────────────────────────────────
 function ExplainerCard({ label, text }: { label: string; text: string }) {
   return (
-    <div className="border p-4" style={{ borderColor: 'rgba(154,164,174,0.4)' }}>
+    <div className="border p-4 transition-colors" style={{ borderColor: 'var(--border)', backgroundColor: 'var(--bg-subtle)' }}>
       <div
-        className="text-xs uppercase tracking-widest mb-1"
-        style={{ fontFamily: 'var(--font-mono, monospace)', color: '#9aa4ae' }}
+        className="text-xs uppercase tracking-widest mb-1 font-bold"
+        style={{ fontFamily: 'var(--font-mono, monospace)', color: 'var(--ink-muted)' }}
       >
         {label}
       </div>
-      <div className="text-sm" style={{ color: 'rgba(22,26,31,0.78)' }}>
+      <div className="text-sm leading-relaxed" style={{ color: 'var(--ink-secondary)' }}>
         {text}
       </div>
     </div>
@@ -68,45 +70,50 @@ interface IntroScreenProps {
 
 export default function IntroScreen({ onStart }: IntroScreenProps) {
   return (
-    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#f1f3f2' }}>
+    <div className="min-h-[100dvh] flex flex-col bg-bg text-ink transition-colors">
       {/* Header */}
       <header
-        className="px-6 py-4 flex items-center justify-between"
-        style={{ borderBottom: '1px solid rgba(154,164,174,0.3)' }}
+        className="px-4 sm:px-6 py-4 flex items-center justify-between transition-colors"
+        style={{ borderBottom: '1px solid var(--border)' }}
       >
-        <span
-          className="font-bold tracking-tight text-sm"
-          style={{ fontFamily: 'var(--font-mono, monospace)', color: '#161a1f' }}
-        >
-          ModusLead
-        </span>
-        <span
-          className="text-xs hidden sm:block"
-          style={{ fontFamily: 'var(--font-mono, monospace)', color: '#9aa4ae' }}
-        >
-          Situational Leadership Diagnostic
-        </span>
+        <div className="flex items-center gap-3">
+          <span
+            className="font-bold tracking-tight text-sm sm:text-base"
+            style={{ fontFamily: 'var(--font-mono, monospace)', color: 'var(--ink)' }}
+          >
+            ModusLead
+          </span>
+          <span
+            className="text-xs hidden sm:inline-block"
+            style={{ fontFamily: 'var(--font-mono, monospace)', color: 'var(--ink-muted)' }}
+          >
+            Situational Leadership Diagnostic
+          </span>
+        </div>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+        </div>
       </header>
 
       {/* Hero */}
-      <main className="flex-1 flex flex-col items-center justify-center px-6 py-12">
+      <main className="flex-1 flex flex-col items-center justify-center px-4 sm:px-6 py-8 sm:py-12">
         <div className="w-full max-w-xl">
           {/* Decorative quadrant + headline */}
-          <div className="flex flex-col items-center text-center mb-10">
-            <div className="mb-6">
+          <div className="flex flex-col items-center text-center mb-8 sm:mb-10">
+            <div className="mb-5 sm:mb-6">
               <MiniQuadrant />
             </div>
 
             <h1
-              className="text-4xl sm:text-5xl font-bold leading-tight mb-4"
-              style={{ color: '#161a1f' }}
+              className="text-3xl sm:text-5xl font-bold leading-tight mb-4"
+              style={{ color: 'var(--ink)' }}
             >
               How do you actually lead?
             </h1>
 
             <p
-              className="text-lg mb-2 max-w-md"
-              style={{ color: 'rgba(22,26,31,0.68)' }}
+              className="text-base sm:text-lg mb-2 max-w-md leading-relaxed"
+              style={{ color: 'var(--ink-secondary)' }}
             >
               16 real management scenarios. Your honest responses. A personalized
               map of your leadership style — strengths, blind spots, and where to
@@ -114,25 +121,19 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
             </p>
 
             <p
-              className="text-sm mb-10"
-              style={{ fontFamily: 'var(--font-mono, monospace)', color: '#9aa4ae' }}
+              className="text-xs sm:text-sm mb-8 sm:mb-10 font-medium"
+              style={{ fontFamily: 'var(--font-mono, monospace)', color: 'var(--ink-muted)' }}
             >
               ~8 min · 16 scenarios · Hersey & Blanchard model
             </p>
 
             <button
               onClick={onStart}
-              className="px-8 py-4 text-base font-semibold text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+              className="w-full sm:w-auto px-8 py-4 text-base font-semibold text-white transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded-none shadow-sm hover:opacity-95 active:scale-[0.99]"
               style={{
-                backgroundColor: '#3d8b83',
+                backgroundColor: 'var(--cta)',
                 letterSpacing: '0.01em',
               }}
-              onMouseOver={(e) =>
-                ((e.currentTarget as HTMLButtonElement).style.backgroundColor = '#346e68')
-              }
-              onMouseOut={(e) =>
-                ((e.currentTarget as HTMLButtonElement).style.backgroundColor = '#3d8b83')
-              }
             >
               Start assessment →
             </button>
@@ -157,10 +158,10 @@ export default function IntroScreen({ onStart }: IntroScreenProps) {
       </main>
 
       {/* Footer */}
-      <footer className="px-6 py-4 text-center">
+      <footer className="px-4 sm:px-6 py-4 text-center border-t border-border/40">
         <p
           className="text-xs"
-          style={{ color: '#9aa4ae', fontFamily: 'var(--font-mono, monospace)' }}
+          style={{ color: 'var(--ink-muted)', fontFamily: 'var(--font-mono, monospace)' }}
         >
           A simplified, non-licensed interpretation of Hersey & Blanchard&rsquo;s Situational
           Leadership Theory

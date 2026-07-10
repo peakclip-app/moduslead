@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -13,14 +14,18 @@ const config: Config = {
         mono: ['var(--font-mono)', 'monospace'],
       },
       colors: {
-        bg: '#F1F3F2',
-        ink: '#161A1F',
-        grid: '#9AA4AE',
-        s1: '#4A6FA5',
-        s2: '#3D8B83',
-        s3: '#C98A3B',
-        s4: '#8B5A7C',
-        cta: '#3D8B83',
+        bg: 'var(--bg)',
+        'bg-card': 'var(--bg-card)',
+        'bg-subtle': 'var(--bg-subtle)',
+        ink: 'var(--ink)',
+        'ink-secondary': 'var(--ink-secondary)',
+        grid: 'var(--ink-muted)',
+        border: 'var(--border)',
+        s1: 'var(--s1)',
+        s2: 'var(--s2)',
+        s3: 'var(--s3)',
+        s4: 'var(--s4)',
+        cta: 'var(--cta)',
       },
     },
   },

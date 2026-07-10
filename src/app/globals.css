@@ -4,14 +4,36 @@
 
 :root {
   --bg: #f1f3f2;
+  --bg-card: #e8eceb;
+  --bg-subtle: rgba(22, 26, 31, 0.04);
   --ink: #161a1f;
-  --grid: #9aa4ae;
+  --ink-secondary: rgba(22, 26, 31, 0.78);
+  --ink-muted: #9aa4ae;
+  --border: rgba(154, 164, 174, 0.35);
+  --border-strong: rgba(154, 164, 174, 0.6);
   --s1: #4a6fa5;
   --s2: #3d8b83;
   --s3: #c98a3b;
   --s4: #8b5a7c;
   --cta: #3d8b83;
   --cta-hover: #346e68;
+}
+
+.dark {
+  --bg: #111418;
+  --bg-card: #191e24;
+  --bg-subtle: rgba(241, 243, 242, 0.05);
+  --ink: #f1f3f2;
+  --ink-secondary: rgba(241, 243, 242, 0.82);
+  --ink-muted: #9aa4ae;
+  --border: rgba(154, 164, 174, 0.28);
+  --border-strong: rgba(154, 164, 174, 0.55);
+  --s1: #6892d1;
+  --s2: #4ebbaf;
+  --s3: #e5a752;
+  --s4: #b07e9e;
+  --cta: #3d8b83;
+  --cta-hover: #4ebbaf;
 }
 
 *,
@@ -28,6 +50,7 @@ html {
 body {
   background-color: var(--bg);
   color: var(--ink);
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 /* ── Dot settle animation (QuadrantPlot) ─────────────────────────── */
