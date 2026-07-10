@@ -179,14 +179,6 @@ export default function ShareCard({ result, onRetake }: ShareCardProps) {
             {result.situationalAccuracy}%
           </span>
         </div>
-
-        {/* CTA line */}
-        <div
-          className="mt-4 text-center text-xs"
-          style={{ fontFamily: 'var(--font-mono, monospace)', color: 'rgba(154,164,174,0.5)' }}
-        >
-          moduslead.app
-        </div>
       </div>
 
       {/* ── Actions ────────────────────────────────────────────────── */}
